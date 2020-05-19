@@ -19,9 +19,6 @@ class ReverseLayerF(Function):
 
         return output, None
         
-    
-    
-import torch
 
 __all__ = ['AlexNet', 'alexnet']
 
@@ -73,7 +70,7 @@ class AlexNet(nn.Module):
     def forward(self, x, alpha=None):
         features = self.features
         # Flatten the features:
-        features = features.view(features.size(0), -1)
+        #features = features.view(features.size(0), -1)
         # If we pass alpha, we can assume we are training the discriminator
         if alpha is not None:
             # gradient reversal layer (backward gradients will be reversed)
@@ -95,7 +92,7 @@ class AlexNet(nn.Module):
     '''
 
 def dann(pretrained=False, progress=True, **kwargs):
-    r"""AlexNet model architecture from the
+    """AlexNet model architecture from the
     `"One weird trick..." <https://arxiv.org/abs/1404.5997>`_ paper.
     Args:
         pretrained (bool): If True, returns a model pre-trained on ImageNet
