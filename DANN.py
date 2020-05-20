@@ -80,7 +80,7 @@ class AlexNet(nn.Module):
         # If we don't pass alpha, we assume we are training with supervision
         else:
             # do something else
-            class_outputs = self.classifier(feature)
+            class_outputs = self.classifier(features)
             return class_outputs
     '''
     def forward(self, x):
