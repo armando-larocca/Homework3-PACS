@@ -75,7 +75,7 @@ class AlexNet(nn.Module):
         if alpha is not None:
             # gradient reversal layer (backward gradients will be reversed)
             reverse_feature = ReverseLayerF.apply(features, alpha)
-            discriminator_output = self.domanin(reverse_feature)
+            discriminator_output = self.domain(reverse_feature)
             return discriminator_output
         # If we don't pass alpha, we assume we are training with supervision
         else:
